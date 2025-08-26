@@ -14,6 +14,16 @@ method correr(cantidadDeMetros) {
 }
 method ultimoRatonComido() = ultimoRatonComido
 method metrosRecorridos() = metrosRecorridos  
+method puedeCazarADistancia(unaDistancia) = unaDistancia / 2 <= energia 
+method cazarA_SiPuede_(unRaton, unaDistancia) {
+  if(self.puedeCazarADistancia(unaDistancia)){
+    self.cazarA_Al_(unRaton, unaDistancia)
+  }
+}
+method cazarA_Al_(unRaton,unaDistancia) {
+ self.puedeCazarADistancia(unaDistancia)
+  self.comer(unRaton)
+}
 }
 
 object jerry {
